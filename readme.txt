@@ -1,0 +1,1 @@
+oc create -f pvc-iu.yaml
