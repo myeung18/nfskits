@@ -1,0 +1,407 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    annotations:
+      pv.kubernetes.io/bound-by-controller: "yes"
+    creationTimestamp: 2018-07-10T23:51:23Z
+    name: backend-redis-storage
+    namespace: ""
+    resourceVersion: "567404"
+    selfLink: /api/v1/persistentvolumes/backend-redis-storage
+    uid: 26c45069-849c-11e8-83cf-beeffeed0039
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 1Gi
+    claimRef:
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      name: system-redis-storage
+      namespace: 3scale-amp
+      resourceVersion: "567397"
+      uid: 2ca4a454-849c-11e8-83cf-beeffeed0039
+    nfs:
+      path: /mnt/3scale/backend-redis-storage
+      server: 10.19.137.80
+    persistentVolumeReclaimPolicy: Recycle
+  status:
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    annotations:
+      pv.kubernetes.io/bound-by-controller: "yes"
+    creationTimestamp: 2018-07-08T02:41:40Z
+    labels:
+      storage: etcd
+    name: etcd-volume
+    namespace: ""
+    resourceVersion: "6434"
+    selfLink: /api/v1/persistentvolumes/etcd-volume
+    uid: 713e5dd0-8258-11e8-83ce-beeffeed0039
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 1Gi
+    claimRef:
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      name: etcd
+      namespace: openshift-ansible-service-broker
+      resourceVersion: "6432"
+      uid: 53635989-825a-11e8-83ce-beeffeed0039
+    nfs:
+      path: /mnt/service-broker/etcd
+      server: babak-master.cloud.lab.eng.bos.redhat.com
+    persistentVolumeReclaimPolicy: Retain
+  status:
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    annotations:
+      pv.kubernetes.io/bound-by-controller: "yes"
+    creationTimestamp: 2018-08-17T13:14:08Z
+    name: my-3scale-backend-redis-storage
+    namespace: ""
+    resourceVersion: "7862053"
+    selfLink: /api/v1/persistentvolumes/my-3scale-backend-redis-storage
+    uid: 6cc8b013-a21f-11e8-83cf-beeffeed0039
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 2Gi
+    claimRef:
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      name: backend-redis-storage
+      namespace: 3scale-api
+      resourceVersion: "7862041"
+      uid: be5a81a7-a21f-11e8-83cf-beeffeed0039
+    nfs:
+      path: /var/3scale-api/backend-redis-storage
+      server: 10.19.137.80
+    persistentVolumeReclaimPolicy: Recycle
+  status:
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    annotations:
+      pv.kubernetes.io/bound-by-controller: "yes"
+    creationTimestamp: 2018-08-17T13:14:25Z
+    name: my-3scale-mysql-storage
+    namespace: ""
+    resourceVersion: "7862047"
+    selfLink: /api/v1/persistentvolumes/my-3scale-mysql-storage
+    uid: 76876926-a21f-11e8-83cf-beeffeed0039
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 2Gi
+    claimRef:
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      name: system-redis-storage
+      namespace: 3scale-api
+      resourceVersion: "7862038"
+      uid: be585fe9-a21f-11e8-83cf-beeffeed0039
+    nfs:
+      path: /var/3scale-api/mysql-storage
+      server: 10.19.137.80
+    persistentVolumeReclaimPolicy: Recycle
+  status:
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    annotations:
+      pv.kubernetes.io/bound-by-controller: "yes"
+    creationTimestamp: 2018-08-17T13:14:20Z
+    name: my-3scale-system-redis-storage
+    namespace: ""
+    resourceVersion: "7862042"
+    selfLink: /api/v1/persistentvolumes/my-3scale-system-redis-storage
+    uid: 73ec6364-a21f-11e8-83cf-beeffeed0039
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 2Gi
+    claimRef:
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      name: mysql-storage
+      namespace: 3scale-api
+      resourceVersion: "7862035"
+      uid: be561638-a21f-11e8-83cf-beeffeed0039
+    nfs:
+      path: /var/3scale-api/system-redis-storage
+      server: 10.19.137.80
+    persistentVolumeReclaimPolicy: Recycle
+  status:
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    annotations:
+      pv.kubernetes.io/bound-by-controller: "yes"
+    creationTimestamp: 2018-08-17T13:14:15Z
+    name: my-3scale-system-storage
+    namespace: ""
+    resourceVersion: "7862036"
+    selfLink: /api/v1/persistentvolumes/my-3scale-system-storage
+    uid: 70a5d9fa-a21f-11e8-83cf-beeffeed0039
+  spec:
+    accessModes:
+    - ReadWriteMany
+    capacity:
+      storage: 2Gi
+    claimRef:
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      name: system-storage
+      namespace: 3scale-api
+      resourceVersion: "7862033"
+      uid: be5318c5-a21f-11e8-83cf-beeffeed0039
+    nfs:
+      path: /var/3scale-api/system-storage
+      server: 10.19.137.80
+    persistentVolumeReclaimPolicy: Recycle
+  status:
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    annotations:
+      pv.kubernetes.io/bound-by-controller: "yes"
+    creationTimestamp: 2018-07-10T23:51:23Z
+    name: mysql-storage
+    namespace: ""
+    resourceVersion: "567411"
+    selfLink: /api/v1/persistentvolumes/mysql-storage
+    uid: 26c03b5f-849c-11e8-83cf-beeffeed0039
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 1Gi
+    claimRef:
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      name: backend-redis-storage
+      namespace: 3scale-amp
+      resourceVersion: "567400"
+      uid: 2ca693af-849c-11e8-83cf-beeffeed0039
+    nfs:
+      path: /mnt/3scale/mysql-storage
+      server: 10.19.137.80
+    persistentVolumeReclaimPolicy: Recycle
+  status:
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    annotations:
+      pv.kubernetes.io/bound-by-controller: "yes"
+    creationTimestamp: 2018-08-14T19:31:52Z
+    name: nfs-pv
+    namespace: ""
+    resourceVersion: "7321113"
+    selfLink: /api/v1/persistentvolumes/nfs-pv
+    uid: b2676ce5-9ff8-11e8-83cf-beeffeed0039
+  spec:
+    accessModes:
+    - ReadWriteMany
+    capacity:
+      storage: 1Gi
+    claimRef:
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      name: system-storage
+      namespace: 3scale-apm
+      resourceVersion: "7265938"
+      uid: 01a7964c-a060-11e8-83cf-beeffeed0039
+    nfs:
+      path: /var/ahameed/nfs
+      server: 10.19.137.80
+    persistentVolumeReclaimPolicy: Retain
+  status:
+    phase: Released
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    annotations:
+      pv.kubernetes.io/bound-by-controller: "yes"
+    creationTimestamp: 2018-08-15T06:50:26Z
+    name: pv0001
+    namespace: ""
+    resourceVersion: "7258201"
+    selfLink: /api/v1/persistentvolumes/pv0001
+    uid: 7dbb5250-a057-11e8-83cf-beeffeed0039
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 5Gi
+    claimRef:
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      name: mynfsclaim1
+      namespace: default
+      resourceVersion: "7247963"
+      uid: 1b8f6b71-9f33-11e8-83cf-beeffeed0039
+    nfs:
+      path: /home/skale/ocdisk
+      server: 10.19.137.80
+    persistentVolumeReclaimPolicy: Recycle
+  status:
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    annotations:
+      pv.kubernetes.io/bound-by-controller: "yes"
+    creationTimestamp: 2018-08-15T06:55:41Z
+    name: pv0002
+    namespace: ""
+    resourceVersion: "7335775"
+    selfLink: /api/v1/persistentvolumes/pv0002
+    uid: 39713854-a058-11e8-83cf-beeffeed0039
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 5Gi
+    claimRef:
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      name: backend-redis-storage
+      namespace: 3scale-apm
+      resourceVersion: "7321337"
+      uid: dd879705-a094-11e8-83cf-beeffeed0039
+    nfs:
+      path: /home/skale/ocdisk2
+      server: 10.19.137.80
+    persistentVolumeReclaimPolicy: Recycle
+  status:
+    message: 'Recycle failed: failed to recycle volume: pod failed, pod.Status.Message
+      unknown.'
+    phase: Failed
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    creationTimestamp: 2018-08-15T06:58:03Z
+    name: pv0003
+    namespace: ""
+    resourceVersion: "7672275"
+    selfLink: /api/v1/persistentvolumes/pv0003
+    uid: 8e257132-a058-11e8-83cf-beeffeed0039
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 5Gi
+    nfs:
+      path: /home/skale/ocdisk3
+      server: 10.19.137.80
+    persistentVolumeReclaimPolicy: Recycle
+  status:
+    phase: Available
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    annotations:
+      pv.kubernetes.io/bound-by-controller: "yes"
+    creationTimestamp: 2018-07-08T02:41:40Z
+    name: registry-volume
+    namespace: ""
+    resourceVersion: "4187"
+    selfLink: /api/v1/persistentvolumes/registry-volume
+    uid: 713bb824-8258-11e8-83ce-beeffeed0039
+  spec:
+    accessModes:
+    - ReadWriteMany
+    capacity:
+      storage: 10Gi
+    claimRef:
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      name: registry-claim
+      namespace: default
+      resourceVersion: "4185"
+      uid: 72e388b4-8258-11e8-83ce-beeffeed0039
+    nfs:
+      path: /exports/registry
+      server: babak-master.cloud.lab.eng.bos.redhat.com
+    persistentVolumeReclaimPolicy: Retain
+  status:
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    annotations:
+      pv.kubernetes.io/bound-by-controller: "yes"
+    creationTimestamp: 2018-07-10T23:51:23Z
+    name: system-redis-storage
+    namespace: ""
+    resourceVersion: "567399"
+    selfLink: /api/v1/persistentvolumes/system-redis-storage
+    uid: 26c22d69-849c-11e8-83cf-beeffeed0039
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 1Gi
+    claimRef:
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      name: mysql-storage
+      namespace: 3scale-amp
+      resourceVersion: "567394"
+      uid: 2ca2b47b-849c-11e8-83cf-beeffeed0039
+    nfs:
+      path: /mnt/3scale/system-redis-storage
+      server: 10.19.137.80
+    persistentVolumeReclaimPolicy: Recycle
+  status:
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    annotations:
+      pv.kubernetes.io/bound-by-controller: "yes"
+    creationTimestamp: 2018-07-10T23:51:23Z
+    name: system-storage
+    namespace: ""
+    resourceVersion: "567393"
+    selfLink: /api/v1/persistentvolumes/system-storage
+    uid: 26bdf36d-849c-11e8-83cf-beeffeed0039
+  spec:
+    accessModes:
+    - ReadWriteMany
+    capacity:
+      storage: 100Mi
+    claimRef:
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      name: system-storage
+      namespace: 3scale-amp
+      resourceVersion: "567391"
+      uid: 2ca0a45f-849c-11e8-83cf-beeffeed0039
+    nfs:
+      path: /mnt/3scale/system-storage
+      server: 10.19.137.80
+    persistentVolumeReclaimPolicy: Recycle
+  status:
+    phase: Bound
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

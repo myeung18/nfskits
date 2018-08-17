@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: my-3scale-system-storage
+spec:
+  capacity:
+    storage: 2Gi 
+  accessModes:
+  - ReadWriteMany 
+  nfs:
+    server: 10.19.137.80
+    path: /var/3scale-api/system-storage
+  persistentVolumeReclaimPolicy: Recycle  

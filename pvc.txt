@@ -1,0 +1,130 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+      pv.kubernetes.io/bind-completed: "yes"
+      pv.kubernetes.io/bound-by-controller: "yes"
+    creationTimestamp: 2018-08-17T13:16:25Z
+    labels:
+      app: 3scale-api-management
+      application: 3scale-amp
+      backend: redis
+      service: backend
+    name: backend-redis-storage
+    namespace: 3scale-api
+    resourceVersion: "7862056"
+    selfLink: /api/v1/namespaces/3scale-api/persistentvolumeclaims/backend-redis-storage
+    uid: be5a81a7-a21f-11e8-83cf-beeffeed0039
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 1Gi
+    volumeName: my-3scale-backend-redis-storage
+  status:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 2Gi
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+      pv.kubernetes.io/bind-completed: "yes"
+      pv.kubernetes.io/bound-by-controller: "yes"
+    creationTimestamp: 2018-08-17T13:16:25Z
+    labels:
+      app: 3scale-api-management
+      application: 3scale-amp
+      service: system
+      system: mysql
+    name: mysql-storage
+    namespace: 3scale-api
+    resourceVersion: "7862044"
+    selfLink: /api/v1/namespaces/3scale-api/persistentvolumeclaims/mysql-storage
+    uid: be561638-a21f-11e8-83cf-beeffeed0039
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 1Gi
+    volumeName: my-3scale-system-redis-storage
+  status:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 2Gi
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+      pv.kubernetes.io/bind-completed: "yes"
+      pv.kubernetes.io/bound-by-controller: "yes"
+    creationTimestamp: 2018-08-17T13:16:25Z
+    labels:
+      app: 3scale-api-management
+      application: 3scale-amp
+      service: system
+      system: redis
+    name: system-redis-storage
+    namespace: 3scale-api
+    resourceVersion: "7862049"
+    selfLink: /api/v1/namespaces/3scale-api/persistentvolumeclaims/system-redis-storage
+    uid: be585fe9-a21f-11e8-83cf-beeffeed0039
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 1Gi
+    volumeName: my-3scale-mysql-storage
+  status:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 2Gi
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+      pv.kubernetes.io/bind-completed: "yes"
+      pv.kubernetes.io/bound-by-controller: "yes"
+    creationTimestamp: 2018-08-17T13:16:25Z
+    labels:
+      app: 3scale-api-management
+      application: 3scale-amp
+      service: system
+      system: app
+    name: system-storage
+    namespace: 3scale-api
+    resourceVersion: "7862039"
+    selfLink: /api/v1/namespaces/3scale-api/persistentvolumeclaims/system-storage
+    uid: be5318c5-a21f-11e8-83cf-beeffeed0039
+  spec:
+    accessModes:
+    - ReadWriteMany
+    resources:
+      requests:
+        storage: 100Mi
+    volumeName: my-3scale-system-storage
+  status:
+    accessModes:
+    - ReadWriteMany
+    capacity:
+      storage: 2Gi
+    phase: Bound
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
