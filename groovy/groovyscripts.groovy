@@ -10,9 +10,9 @@ import java.security.SecureRandom
 import java.net.URLEncoder
 
 
-		create3scaleService("https://ah-3scale-ansible-admin.app.rhdp.ocp.cloud.lab.eng.bos.redhat.com","4a2a1ce5f6a7c5f6a67234d84f647f68b690e4931429d93c65e2bdf63a6a406",
-				"https://raw.githubusercontent.com/redhatHameed/fuse-financial-cicd/master/openapi-spec.json",
-				"3scalefuse2")
+create3scaleService("https://ah-3scale-ansible-admin.app.rhdp.ocp.cloud.lab.eng.bos.redhat.com","4a2a1ce5f6a7c5f6a67234d84f647f68b690e4931429d93c65e2bdf63a6a406",
+		"https://raw.githubusercontent.com/redhatHameed/fuse-financial-cicd/master/openapi-spec.json",
+		"3scalefuse2")
 
 
 

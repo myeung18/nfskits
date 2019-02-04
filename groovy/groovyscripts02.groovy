@@ -9,10 +9,11 @@ import java.security.SecureRandom
 import java.net.URLEncoder
 
 // https://ah-3scale-ansible-admin.app.rhdp.ocp.cloud.lab.eng.bos.redhat.com
-def url = "https://mss-3scale-admin.app.rhdp.ocp.cloud.lab.eng.bos.redhat.com"
-def token = "215269fb901e616538320d13a0c74b8955bab3bc873937bb012f76cddea5fe98"
+def url = "https://startups-admin.3scale.net"
+url = "https://3scale-admin.app.rhdp.ocp.cloud.lab.eng.bos.redhat.com"
+def token = "a96c1296376a4901d90d69405265843b888b12649e827052fe67dcdb899c4c61"
 
-//createSvc(params.THREESCALE_URL, params.API_TOKEN, "anyname", "anysysname")
+//createSvc(url, token, "anyname", "anysysname")
 startUpGet(url, token)
 
 def createSvc(String adminBaseUrl, String token,  String name, String serviceSystemName) {
