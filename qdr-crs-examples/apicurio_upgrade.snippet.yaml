@@ -1,0 +1,21 @@
+apiVersion: console.openshift.io/v1
+kind: ConsoleYAMLSample
+metadata:
+  name: apicurito-upgrade-snippet
+spec:
+  targetResource:
+    apiVersion: v1
+    kind: Pod
+  title: Apicurito Image upgrade Snippet
+  snippet: true
+  description: |
+    How to upgrade:
+    Upgrades are trigered by updating the image field in the CR. This can be done manually via the Openshift console, or with kubeclt:
+  yaml: |
+    apiVersion: apicur.io/v1alpha1
+    kind: Apicurito
+    metadata:
+      name: apicurito-service
+    spec:
+      size: 3
+      images: apicurio/apicurito-ui:<newversion>

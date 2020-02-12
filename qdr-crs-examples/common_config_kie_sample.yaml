@@ -1,0 +1,21 @@
+apiVersion: console.openshift.io/v1
+kind: ConsoleYAMLSample
+metadata:
+  name: kieapp-common-config-sample
+spec:
+  targetResource:
+    apiVersion: app.kiegroup.org/v2
+    kind: KieApp 
+  title: KieApp Common Config Sample
+  description: KieApp Common Config Sample
+  yaml: |
+    apiVersion: app.kiegroup.org/v2
+    kind: KieApp
+    metadata:
+      name: common-config
+    spec:
+      environment: rhpam-trial
+      commonConfig:
+        # By default is the cr.Name
+        applicationName: other
+        adminPassword: example

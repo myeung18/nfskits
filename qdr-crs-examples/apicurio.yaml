@@ -1,0 +1,17 @@
+apiVersion: console.openshift.io/v1
+kind: ConsoleYAMLSample
+metadata:
+  name: apicurito-deployment
+spec:
+  targetResource:
+    apiVersion: apps/v1
+    kind: Deployment
+  title: Apicurito Deployment sample
+  description: Start an apicurito deployment
+  yaml: |
+    apiVersion: apicur.io/v1alpha1
+    kind: Apicurito
+    metadata:
+      name: apicurito-service
+    spec:
+      size: 3
