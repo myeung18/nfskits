@@ -1,0 +1,24 @@
+apiVersion: console.openshift.io/v1
+kind: ConsoleYAMLSample
+metadata:
+  name: example-configmap-sample
+spec:
+  targetResource:
+    apiVersion: v1
+    kind: ConfigMap
+  title: configmap-example-sample
+  description: An example Job YAML sample
+  yaml: |
+    kind: ConfigMap 
+    apiVersion: v1 
+    metadata:
+      name: example-configmap
+    data:
+      # Configuration values can be set as key-value properties
+      database: mongodb
+      database_uri: mongodb://localhost:27017
+      
+      # Or set as complete file contents (even JSON!)
+      keys: | 
+        image.public.key=771 
+        rsa.public.key=42
